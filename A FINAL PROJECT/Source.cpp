@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <vector>
 #include <string>
+#include <Windows.h>
 
 // Schedule 
 // 3-29-16 Mr.Marchbanks
@@ -20,14 +21,14 @@ int main(){
 	//Staring A Menu
 	do{
 		cout << endl;
-		cout << "Here are available options." << endl;
+		cout << "Here are available options. (Must be whole numbers)" << endl;
 		cout << "*********************************************" << endl;
 		cout << "* 1. Show a cool picture.                   *" << endl;
-		cout << "* 2. Take a short break.                    *" << endl;
+		cout << "* 2. Take a 5 second break.                 *" << endl;
 		cout << "* 3. Make a Shedule.                        *" << endl;
 		cout << "* 4. Look at a selected schedule.           *" << endl;
 		cout << "* 5. View all the schedules.                *" << endl;
-		cout << "* 6. Check the time.                        *" << endl;
+		cout << "* 6. Check the time and date.               *" << endl;
 		cout << "* 7. Show another cool picture.             *" << endl;
 		cout << "* Any other options will result in an Exit. *" << endl;
 		cout << "*********************************************" << endl;
@@ -35,19 +36,19 @@ int main(){
 		cout << endl;
 
 		if (answer == 1){
-			cout << "  * * * * * * * * * * * * * " << endl;
-			cout << " * *********************** *   " << endl;
+			cout << "  * * * * * * * * * * * * *" << endl;
+			cout << " * *********************** *" << endl;
 			cout << " * *  *       *       *  * *" << endl;
 			cout << " * *   *     * *     *   * *" << endl;
 			cout << " * *    *   *   *   *    * *" << endl;
 			cout << " * *     * *     * *     * *" << endl;
 			cout << " * *      *       *      * *" << endl;
-			cout << " * *********************** *  " << endl;
-			cout << "  * * * * * * * * * * * * * " << endl;
+			cout << " * *********************** *" << endl;
+			cout << "  * * * * * * * * * * * * *" << endl;
 			continue;
 		}
 		if (answer == 2){
-			cout << "B" << endl;
+			Sleep(5000);
 			continue;
 		}
 		if (answer == 3){
@@ -67,7 +68,7 @@ int main(){
 			continue;
 		}
 		if (answer == 6){
-			cout << "B" << endl;
+			cout << __TIMESTAMP__ << endl;
 			continue;
 		}
 		if (answer == 7){
