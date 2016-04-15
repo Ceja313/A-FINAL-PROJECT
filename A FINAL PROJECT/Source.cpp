@@ -60,11 +60,11 @@ int main(){
 			continue;
 		}
 		if (answer == 4){
-			cout << "B" << endl;
+			//View a certain schedule
 			continue;
 		}
 		if (answer == 5){
-			cout << "A" << endl;
+			//View all the schedules
 			continue;
 		}
 		if (answer == 6){
@@ -72,7 +72,9 @@ int main(){
 			continue;
 		}
 		if (answer == 7){
-			cout << "A" << endl;
+			cout << "     ***************** " << endl;
+			cout << "   ****************    " << endl;
+			cout << "  **************       "
 			continue;
 		}
 		if (answer != 1, 2, 3, 4, 5, 6, 7){
