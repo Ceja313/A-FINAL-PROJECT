@@ -31,11 +31,11 @@ string Schedules::getQtya(){
 	return QtyA;
 }
 
-void Schedules::setSRp(float value){
+void Schedules::setUpComingEvent(float value){
 	SRP = value;
 }
 
-float Schedules::getSRp(){
+float Schedules::getUpComingEvent(){
 	return SRP;
 }
 

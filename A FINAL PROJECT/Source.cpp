@@ -6,7 +6,6 @@
 #include <Windows.h>
 #include "Schedule.h"
 #include <fstream>
-#include "random.h"
 
 // Schedule 
 // 3-29-16 Mr.Marchbanks
@@ -18,11 +17,13 @@ ifstream in;
 ofstream out;
 vector<Schedules> schedules;
 string name;
+float SRP;
 string QtyA;
 string line;
 string line2;
 string line3;
 float answer;
+int response;
 float now;
 
 int main(){
@@ -70,26 +71,49 @@ int main(){
 			// Schedule will consist of
 			// Entering a Name
 			cout << "Enter your name." << endl;
-			getline(in, line);
-			// Entering the Event
-			getline(in, line2);
+			getline(cin, line);
+			cin.ignore();
 			// Entering the current time (Whether PM or AM)
-			in >> QtyA;
+			cout << "Enter the current time of course using a . in place of :" << endl;
+			cin >> QtyA;
+			cin.ignore();
+			// Entering the Event
+			cout << "Enter the event." << endl;
+			getline(cin, line2);
+			cin.ignore();
 			// Entering the time of the upcoming Event.
-			getline(in, line3);
-			// Storing them. need to add current time and time of the event.
+			cout << "Enter the time of the upcoming event. Using . instead of :" << endl;
+			cin >> SRP;
+			cin.ignore();
 			temp.setName(line);
+			temp.setQtya(QtyA);
 			temp.setEvent(line2);
+			temp.setUpComingEvent(SRP);
 			schedules.push_back(temp);
+			cin.ignore();
 			continue;
 
 		}
 		if (answer == 6){
 			//View a certain schedule, if any exist.
+			cout << "What Schedule would you like to see?" << endl;
+			cin >> response;
+
 			continue;
 		}
 		if (answer == 7){
 			//View all the schedules
+			for (int i = 0; i < schedules.size(); i++){
+				cout << "*******************************" << endl;
+				cout << "Event " << i + 1 << endl;
+				cout << "Person's name.               :" << schedules[i].getName() << endl;
+				cout << "Event Name.                  :" << schedules[i].getEvent() << endl;
+				cout << "Current time.                :" << schedules[i].getQtya() << endl;
+				cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << endl;
+				cout << "*******************************" << endl;
+				cout << endl;
+			}
+			
 			continue;
 		}
 		if (answer == 8){

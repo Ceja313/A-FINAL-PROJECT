@@ -26,8 +26,8 @@ public:
 	string getName();
 	void setQtya(string value);
 	string getQtya();
-	void setSRp(float value);
-	float getSRp();
+	void setUpComingEvent(float value);
+	float getUpComingEvent();
 	void setSaleprice(float value);
 	float getSaleprice();
 	void SetPurchprice2(float value);
