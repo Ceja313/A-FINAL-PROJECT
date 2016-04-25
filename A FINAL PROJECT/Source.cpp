@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <stdlib.h>
 #include <iomanip>
 #include <vector>
@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include "Schedule.h"
 #include <fstream>
+#include "random.h"
 
 // Schedule 
 // 3-29-16 Mr.Marchbanks
@@ -20,7 +21,9 @@ string name;
 string QtyA;
 string line;
 string line2;
+string line3;
 float answer;
+float now;
 
 int main(){
 	// Introduction
@@ -40,7 +43,7 @@ int main(){
 		cout << "* 6. Look at a selected schedule.           *" << endl;
 		cout << "* 7. View all the schedules.                *" << endl;
 		cout << "* 8. Check the time and date.               *" << endl;
-		cout << "* 9. Show another cool picture.             *" << endl;
+		cout << "* 9. Show 2 Pictures.                       *" << endl;
 		cout << "* Any other options will result in an Exit. *" << endl;
 		cout << "*********************************************" << endl;
 		cin >> answer;
@@ -71,11 +74,18 @@ int main(){
 			// Entering the Event
 			getline(in, line2);
 			// Entering the current time (Whether PM or AM)
+			in >> QtyA;
 			// Entering the time of the upcoming Event.
+			getline(in, line3);
+			// Storing them. need to add current time and time of the event.
+			temp.setName(line);
+			temp.setEvent(line2);
+			schedules.push_back(temp);
 			continue;
+
 		}
 		if (answer == 6){
-			//View a certain schedule
+			//View a certain schedule, if any exist.
 			continue;
 		}
 		if (answer == 7){
@@ -87,9 +97,51 @@ int main(){
 			continue;
 		}
 		if (answer == 9){
-			cout << "     ***************** " << endl;
-			cout << "   ****************    " << endl;
-			cout << "  **************       " << endl;
+			cout << "________________00" << endl;
+			cout << "_______________0000" << endl;
+			cout << "___0__________000000___________0" << endl;
+			cout << "___00_________000000___________0" << endl;
+			cout << "____0000______000000__________00" << endl;
+			cout << "____000000____0000000_____00000" << endl;
+			cout << "_0_____0000000_000000_00000000___0" << endl;
+			cout << "00______000000_00000_0000000____00" << endl;
+			cout << "0000_____000000_000_000000____0000" << endl;
+			cout << "_000000000__0000_0_000_0_000000000" << endl;
+			cout << "____000000000__0_0_0_00000000000" << endl;
+			cout << "________000000000000000000000" << endl;
+			cout << "______________000_0_0000" << endl;
+			cout << "____________00000_0__00000" << endl;
+			cout << "__________00_______0_______00" << endl;
+			cout << "____________________0" << endl;
+			cout << endl << "It is just a leaf. " << endl << endl;
+
+			cout << "_________________88" << endl;
+			cout << "________________8888" << endl;
+			cout << "________________8888" << endl;
+			cout << "_______________888888" << endl;
+			cout << "______________88888888" << endl;
+			cout << "_____________8888888888" << endl;
+			cout << "____________8888888888888" << endl;
+			cout << "_________888888888888888888" << endl;
+			cout << "_______8888888888888888888888" << endl;
+			cout << "_____________8888888888" << endl;
+			cout << "___________88888888888888" << endl;
+			cout << "_________888888888888888888" << endl;
+			cout << "_______8888888888888888888888" << endl;
+			cout << "____8888888888888888888888888888" << endl;
+			cout << "___________888888888888888" << endl;
+			cout << "__________88888888888888888" << endl;
+			cout << "________888888888888888888888" << endl;
+			cout << "_____888888888888888888888888888" << endl;
+			cout << "__888888888888888888888888888888888" << endl;
+			cout << "__________888888888888888888" << endl;
+			cout << "_________88888888888888888888" << endl;
+			cout << "_______888888888888888888888888" << endl;
+			cout << "_____8888888888888888888888888888" << endl;
+			cout << "__8888888888888888888888888888888888" << endl;
+			cout << "88888888888888__8888888__8888888888888" << endl;
+			cout << "_________________88888" << endl;
+			cout << "_________________88888" << endl;
 			continue;
 		}
 		if (answer != 1, 2, 3, 4, 5, 6, 7, 8, 9){

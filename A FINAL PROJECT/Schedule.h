@@ -8,7 +8,9 @@ using namespace std;
 class Schedules {
 private:
 	string name;
+	string event;
 	string QtyA;
+	string time;
 	float SRP;
 	float PurchPrice;
 	float TotalSales;
@@ -18,6 +20,8 @@ private:
 	vector<Schedules> sales;
 public:
 	Schedules();
+	void setEvent(string value);
+	string getEvent();
 	void setName(string value);
 	string getName();
 	void setQtya(string value);

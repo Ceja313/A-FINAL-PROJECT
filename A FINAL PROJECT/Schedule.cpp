@@ -16,6 +16,13 @@ string Schedules::getName() {
 	return name;
 }
 
+void Schedules::setEvent(string value) {
+	event = value;
+}
+
+string Schedules::getEvent() {
+	return event;
+}
 void Schedules::setQtya(string value){
 	QtyA = value;
 }
