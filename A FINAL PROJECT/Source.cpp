@@ -45,7 +45,8 @@ int main(){
 		cout << "* 7. View all the schedules.                *" << endl;
 		cout << "* 8. Check the time and date.               *" << endl;
 		cout << "* 9. Show 2 Pictures.                       *" << endl;
-		cout << "* Any other options will result in an Exit. *" << endl;
+		cout << "* 10. Exit.                                 *" << endl;
+		cout << "* Any other options will continue the loop. *" << endl;
 		cout << "*********************************************" << endl;
 		cin >> answer;
 		cout << endl;
@@ -70,6 +71,7 @@ int main(){
 			Schedules temp;
 			// Schedule will consist of
 			// Entering a Name
+			cin.ignore();
 			cout << "Enter your name." << endl;
 			getline(cin, line);
 			// Entering the current time (Whether PM or AM)
