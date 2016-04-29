@@ -20,7 +20,7 @@ string name;
 float SRP;
 string QtyA;
 string line;
-string line2;
+string linee;
 string line3;
 float answer;
 int response;
@@ -72,46 +72,52 @@ int main(){
 			// Entering a Name
 			cout << "Enter your name." << endl;
 			getline(cin, line);
-			cin.ignore();
 			// Entering the current time (Whether PM or AM)
 			cout << "Enter the current time of course using a . in place of :" << endl;
 			cin >> QtyA;
-			cin.ignore();
 			// Entering the Event
 			cout << "Enter the event." << endl;
-			getline(cin, line2);
-			cin.ignore();
+			cin >> linee;
 			// Entering the time of the upcoming Event.
 			cout << "Enter the time of the upcoming event. Using . instead of :" << endl;
 			cin >> SRP;
-			cin.ignore();
 			temp.setName(line);
 			temp.setQtya(QtyA);
-			temp.setEvent(line2);
+			temp.setEvent(linee);
 			temp.setUpComingEvent(SRP);
 			schedules.push_back(temp);
 			cin.ignore();
-			continue;
 
+		}
+
+		if (answer == 4){
+			continue;
+		}
+		if (answer == 5){
+			continue;
 		}
 		if (answer == 6){
 			//View a certain schedule, if any exist.
 			cout << "What Schedule would you like to see?" << endl;
 			cin >> response;
-
 			continue;
 		}
 		if (answer == 7){
 			//View all the schedules
-			for (int i = 0; i < schedules.size(); i++){
-				cout << "*******************************" << endl;
-				cout << "Event " << i + 1 << endl;
-				cout << "Person's name.               :" << schedules[i].getName() << endl;
-				cout << "Event Name.                  :" << schedules[i].getEvent() << endl;
-				cout << "Current time.                :" << schedules[i].getQtya() << endl;
-				cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << endl;
-				cout << "*******************************" << endl;
-				cout << endl;
+			if (schedules.size()){
+				for (int i = 0; i < schedules.size(); i++){
+					cout << "*******************************" << endl;
+					cout << "Event " << i + 1 << endl;
+					cout << "Person's name.               :" << schedules[i].getName() << endl;
+					cout << "Event Name.                  :" << schedules[i].getEvent() << endl;
+					cout << "Current time.                :" << schedules[i].getQtya() << endl;
+					cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << endl;
+					cout << "*******************************" << endl;
+					cout << endl;
+				}
+			}
+			else{
+				cout << "There are no schedules yet." << endl;
 			}
 			
 			continue;
