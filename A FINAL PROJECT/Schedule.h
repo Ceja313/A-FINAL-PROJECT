@@ -17,9 +17,12 @@ private:
 	float Profit;
 	float SalePrice;
 	float purchprice2;
+	float Eventdifference;
 	vector<Schedules> sales;
 public:
 	Schedules();
+	void seteventDifference(float value);
+	float geteventDifference();
 	void setEvent(string value);
 	string getEvent();
 	void setName(string value);

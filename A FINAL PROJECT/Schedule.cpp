@@ -23,6 +23,7 @@ void Schedules::setEvent(string value) {
 string Schedules::getEvent() {
 	return event;
 }
+
 void Schedules::setQtya(string value){
 	QtyA = value;
 }

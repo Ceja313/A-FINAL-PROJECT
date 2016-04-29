@@ -102,6 +102,18 @@ int main(){
 			//View a certain schedule, if any exist.
 			cout << "What Schedule would you like to see?" << endl;
 			cin >> response;
+			if (response > schedules.size() || response < 0){
+				for (int i = response){
+					cout << "*******************************" << endl;
+					cout << "Event " << i + 1 << endl;
+					cout << "Person's name.               :" << schedules[i].getName() << endl;
+					cout << "Event Name.                  :" << schedules[i].getEvent() << endl;
+					cout << "Current time.                :" << schedules[i].getQtya() << endl;
+					cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << endl;
+					cout << "*******************************" << endl;
+					cout << endl;
+				}
+			}
 			continue;
 		}
 		if (answer == 7){
@@ -175,11 +187,6 @@ int main(){
 			cout << "_________________88888" << endl;
 			cout << "_________________88888" << endl;
 			continue;
-		}
-		if (answer != 1, 2, 3, 4, 5, 6, 7, 8, 9){
-			cout << "Program has exited." << endl << endl;
-			system("pause");
-			return 0;
 		}
 	} while (true);
 }
