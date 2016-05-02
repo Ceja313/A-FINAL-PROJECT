@@ -71,21 +71,21 @@ int main(){
 			Schedules temp;
 			// Schedule will consist of
 			// Entering a Name
-			cin.ignore();
-			cout << "Enter your name." << endl;
-			getline(cin, line);
+			cout << "Enter your name. Name must be one word." << endl;
+			cin >> linee;
 			// Entering the current time (Whether PM or AM)
 			cout << "Enter the current time of course using a . in place of :" << endl;
 			cin >> QtyA;
 			// Entering the Event
+			cin.ignore();
 			cout << "Enter the event." << endl;
-			cin >> linee;
+			getline(cin, line);
 			// Entering the time of the upcoming Event.
 			cout << "Enter the time of the upcoming event. Using . instead of :" << endl;
 			cin >> SRP;
-			temp.setName(line);
+			temp.setName(linee);
 			temp.setQtya(QtyA);
-			temp.setEvent(linee);
+			temp.setEvent(line);
 			temp.setUpComingEvent(SRP);
 			schedules.push_back(temp);
 			cin.ignore();
@@ -101,18 +101,22 @@ int main(){
 		if (answer == 6){
 			//View a certain schedule, if any exist.
 			cout << "What Schedule would you like to see?" << endl;
+			cout << "Must be a whole number." << endl;
 			cin >> response;
-			if (response > schedules.size() || response < 0){
-				for (int i = response; i < schedules.size(); i ++){
+			if (schedules.size()){
+				for (int i = response; i <! response+1; i ++){
 					cout << "*******************************" << endl;
 					cout << "Event " << i + 1 << endl;
-					cout << "Person's name.               :" << schedules[i].getName() << endl;
-					cout << "Event Name.                  :" << schedules[i].getEvent() << endl;
-					cout << "Current time.                :" << schedules[i].getQtya() << endl;
-					cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << endl;
+					cout << "Person's name.               :" << schedules[response].getName() << endl;
+					cout << "Event Name.                  :" << schedules[response].getEvent() << endl;
+					cout << "Current time.                :" << schedules[response].getQtya() << endl;
+					cout << "Time of the upcoming event.  :" << schedules[response].getUpComingEvent() << endl;
 					cout << "*******************************" << endl;
 					cout << endl;
 				}
+			}
+			else{
+				cout << "There are no schedules yet." << endl;
 			}
 			continue;
 		}
@@ -120,13 +124,13 @@ int main(){
 			//View all the schedules
 			if (schedules.size()){
 				for (int i = 0; i < schedules.size(); i++){
-					cout << "*******************************" << endl;
+					cout << "************************************" << endl;
 					cout << "Event " << i + 1 << endl;
-					cout << "Person's name.               :" << schedules[i].getName() << endl;
-					cout << "Event Name.                  :" << schedules[i].getEvent() << endl;
-					cout << "Current time.                :" << schedules[i].getQtya() << endl;
-					cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << endl;
-					cout << "*******************************" << endl;
+					cout << "Person's name.               :" << schedules[i].getName() << "*" << endl;
+					cout << "Event Name.                  :" << schedules[i].getEvent() << "*" << endl;
+					cout << "Current time.                :" << schedules[i].getQtya() << "*" << endl;
+					cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << "*" << endl;
+					cout << "************************************" << endl;
 					cout << endl;
 				}
 			}
@@ -188,7 +192,7 @@ int main(){
 			cout << "_________________88888" << endl;
 			continue;
 		}
-		if (answer = 10){
+		if (answer == 10){
 			cout << "Program has Exited." << endl;
 			cout << "I Hope you had fun!" << endl << endl;
 			system("pause");
