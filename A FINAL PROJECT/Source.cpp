@@ -103,7 +103,7 @@ int main(){
 			cout << "What Schedule would you like to see?" << endl;
 			cin >> response;
 			if (response > schedules.size() || response < 0){
-				for (int i = response){
+				for (int i = response; i < schedules.size(); i ++){
 					cout << "*******************************" << endl;
 					cout << "Event " << i + 1 << endl;
 					cout << "Person's name.               :" << schedules[i].getName() << endl;
@@ -187,6 +187,12 @@ int main(){
 			cout << "_________________88888" << endl;
 			cout << "_________________88888" << endl;
 			continue;
+		}
+		if (answer = 10){
+			cout << "Program has Exited." << endl;
+			cout << "I Hope you had fun!" << endl << endl;
+			system("pause");
+			return 0;
 		}
 	} while (true);
 }
