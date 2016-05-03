@@ -24,11 +24,11 @@ string Schedules::getEvent() {
 	return event;
 }
 
-void Schedules::setQtya(string value){
+void Schedules::setQtya(float value){
 	QtyA = value;
 }
 
-string Schedules::getQtya(){
+float Schedules::getQtya(){
 	return QtyA;
 }
 
@@ -40,6 +40,15 @@ float Schedules::getUpComingEvent(){
 	return SRP;
 }
 
+
+void Schedules::seteventDifference(float value) {
+	Eventdifference = value;
+}
+float Schedules::geteventDifference(){
+	return getUpComingEvent() - getQtya();
+}
+
+
 void Schedules::setSaleprice(float value){
 	SalePrice = value;
 }
@@ -47,7 +56,6 @@ void Schedules::setSaleprice(float value){
 float Schedules::getSaleprice(){
 	return SalePrice;
 }
-
 void Schedules::SetPurchprice2(float value){
 	purchprice2 = value;
 }

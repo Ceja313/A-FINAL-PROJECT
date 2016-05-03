@@ -18,7 +18,7 @@ ofstream out;
 vector<Schedules> schedules;
 string name;
 float SRP;
-string QtyA;
+float QtyA;
 string line;
 string linee;
 string line3;
@@ -52,6 +52,7 @@ int main(){
 		cout << endl;
 
 		if (answer == 1){
+			//Show a Cool Picture.
 			cout << "  * * * * * * * * * * * * *" << endl;
 			cout << " * *********************** *" << endl;
 			cout << " * *  *       *       *  * *" << endl;
@@ -64,10 +65,12 @@ int main(){
 			continue;
 		}
 		if (answer == 2){
+			//Take a Short Break.
 			Sleep(5000);
 			continue;
 		}
 		if (answer == 3){
+			//Make a schedule
 			Schedules temp;
 			// Schedule will consist of
 			// Entering a Name
@@ -83,6 +86,8 @@ int main(){
 			// Entering the time of the upcoming Event.
 			cout << "Enter the time of the upcoming event. Using . instead of :" << endl;
 			cin >> SRP;
+			temp.geteventDifference();
+			temp.seteventDifference(temp.geteventDifference());
 			temp.setName(linee);
 			temp.setQtya(QtyA);
 			temp.setEvent(line);
@@ -93,20 +98,23 @@ int main(){
 		}
 
 		if (answer == 4){
+			//Show the farthest schedule.
 			continue;
 		}
 		if (answer == 5){
+			//Show the closest schedule.
 			continue;
 		}
 		if (answer == 6){
 			//View a certain schedule, if any exist.
 			cout << "What Schedule would you like to see?" << endl;
 			cout << "Must be a whole number." << endl;
+			cout << "If the schedules number doesn't exist, the loop will continue." << endl;
 			cin >> response;
 			if (schedules.size()){
 				for (int i = response; i <! response+1; i ++){
 					cout << "*******************************" << endl;
-					cout << "Event " << i + 1 << endl;
+					cout << "Event " << i + 1  << endl;
 					cout << "Person's name.               :" << schedules[response].getName() << endl;
 					cout << "Event Name.                  :" << schedules[response].getEvent() << endl;
 					cout << "Current time.                :" << schedules[response].getQtya() << endl;
@@ -123,9 +131,10 @@ int main(){
 		if (answer == 7){
 			//View all the schedules
 			if (schedules.size()){
-				for (int i = 0; i < schedules.size(); i++){
+				cout << "starts at 0" << endl;
+				for (int i = 0; i <! schedules.size(); i++){
 					cout << "************************************" << endl;
-					cout << "Event " << i + 1 << endl;
+					cout << "Event " << i +1 << endl;
 					cout << "Person's name.               :" << schedules[i].getName() << "*" << endl;
 					cout << "Event Name.                  :" << schedules[i].getEvent() << "*" << endl;
 					cout << "Current time.                :" << schedules[i].getQtya() << "*" << endl;
@@ -141,10 +150,12 @@ int main(){
 			continue;
 		}
 		if (answer == 8){
+			//Show the Time.
 			cout << __TIMESTAMP__ << endl;
 			continue;
 		}
 		if (answer == 9){
+			//Show cool pictures
 			cout << "________________00" << endl;
 			cout << "_______________0000" << endl;
 			cout << "___0__________000000___________0" << endl;
@@ -193,6 +204,7 @@ int main(){
 			continue;
 		}
 		if (answer == 10){
+			// Exit the Program.
 			cout << "Program has Exited." << endl;
 			cout << "I Hope you had fun!" << endl << endl;
 			system("pause");

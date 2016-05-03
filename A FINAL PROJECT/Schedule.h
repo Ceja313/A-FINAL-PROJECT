@@ -9,7 +9,7 @@ class Schedules {
 private:
 	string name;
 	string event;
-	string QtyA;
+	float QtyA;
 	string time;
 	float SRP;
 	float PurchPrice;
@@ -27,8 +27,8 @@ public:
 	string getEvent();
 	void setName(string value);
 	string getName();
-	void setQtya(string value);
-	string getQtya();
+	void setQtya(float value);
+	float getQtya();
 	void setUpComingEvent(float value);
 	float getUpComingEvent();
 	void setSaleprice(float value);
