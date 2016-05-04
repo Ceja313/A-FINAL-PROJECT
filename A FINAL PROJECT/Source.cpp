@@ -98,11 +98,52 @@ int main(){
 		}
 
 		if (answer == 4){
-			//Show the farthest schedule.
+			//Show the time differences and farthest schedule.
+			for (int i = 0; i <!schedules.size(); i++){
+				cout << "************************************" << endl;
+				cout << "Event " << i + 1 << endl;
+				cout << "Person's name.               :" << schedules[i].getName() << "*" << endl;
+				cout << "Event Name.                  :" << schedules[i].getEvent() << "*" << endl;
+				cout << "Current time.                :" << schedules[i].getQtya() << "*" << endl;
+				cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << "*" << endl;
+				cout << "************************************" << endl;
+				cout << endl;
+				/*
+				do {
+					// Reset our flag to false, meaning no changes have been made
+					flag = false;
+
+					// Iterate through our array - 1, to avoid going out of bounds with inner code
+					for (int i = 0; i < 9; i++) {
+
+						// If our current index is larger than the next array index, swap them
+						if (schedules[i].geteventDifference > block[i + 1]) {
+
+							swap = block[i];
+							block[i] = block[i + 1];
+							block[i + 1] = swap;
+
+							// We made a change, set our flag to true to make another loop around
+							flag = true;
+						}
+
+					}
+				} */
+			}
 			continue;
 		}
 		if (answer == 5){
-			//Show the closest schedule.
+			//Show the time differences and closest schedule.
+			for (int i = 0; i <!schedules.size(); i++){
+				cout << "************************************" << endl;
+				cout << "Event " << i + 1 << endl;
+				cout << "Person's name.               :" << schedules[i].getName() << "*" << endl;
+				cout << "Event Name.                  :" << schedules[i].getEvent() << "*" << endl;
+				cout << "Current time.                :" << schedules[i].getQtya() << "*" << endl;
+				cout << "Time of the upcoming event.  :" << schedules[i].getUpComingEvent() << "*" << endl;
+				cout << "************************************" << endl;
+				cout << endl;
+			}
 			continue;
 		}
 		if (answer == 6){
