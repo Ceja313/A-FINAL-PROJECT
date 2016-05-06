@@ -104,31 +104,31 @@ int main(){
 
 		}
 
-		/*
+		
 		if (answer == 4){
 			//Show the time differences and farthest schedule.
 			bool flag = false;
 			if (schedules.size() ==0){
 				cout << "There are no schedules." << endl;
-			}
+					}
 			if (schedules.size() == 1){
 				cout << "There is only one event difference." << endl;
 				cout << schedules[0].geteventDifference() << " is the time difference of the 1 Event." << endl;
-				high = schedules[0].geteventDifference();
-			}
-			if (schedules.size() > !2){
-				for (int i = 0; i <!schedules.size(); i++){
+					high = schedules[0].geteventDifference();
+						}
+			if (schedules.size() >=2){
+				for (int i = 0; i <schedules.size(); i++){
 					if (schedules[i].geteventDifference() > high){
 						high = schedules[i].geteventDifference();
-					}
-				}
-				for (int i = 0; i < !schedules.size(); i++){
-					cout << "These are the differences." << endl;
-					cout << schedules[i].geteventDifference() << endl;
-				}
-			}
-			cout << "Highest Event Difference is : " << high << endl;
-			continue;
+							}
+								}
+									cout << "These are the event differences." << endl;
+										for (int i = 0; i <schedules.size(); i++){
+											cout << schedules[i].geteventDifference() << endl;
+												}
+													}
+		cout << "Highest Event Difference is : " << high << endl;
+		continue;
 		}
 
 
@@ -137,69 +137,63 @@ int main(){
 			bool flag = false;
 			if (schedules.size() == 0){
 				cout << "There are no schedules." << endl;
-			}
-			if (schedules.size() > !2){
-				for (int i = 0; i < !schedules.size(); i++){
-					if (schedules[i].geteventDifference() < low){
-						low = schedules[i].geteventDifference();
 					}
-				}
-				for (int i = 0; i < !schedules.size(); i++){
-					cout << "These are the event differences." << endl;
-					cout << schedules[i].geteventDifference() << endl;
-				}
-			}
 			if (schedules.size() == 1){
 				cout << "There is only one event difference." << endl;
 				cout << schedules[0].geteventDifference() << " is the time difference of the 1 Event." << endl;
-			}
-			cout << "Lowest Event Difference is : " << schedules[0].geteventDifference() << endl;
-			continue;
+					}
+			if (schedules.size() >=2){
+				for (int i = 0; i <schedules.size(); i++){
+					if (schedules[i].geteventDifference() < low){
+						low = schedules[i].geteventDifference();
+							}
+								}
+				for (int i = 0; i <schedules.size(); i++){
+					cout << "These are the event differences." << endl;
+					cout << schedules[i].geteventDifference() << endl;
+						}
+							}
+		cout << "Lowest Event Difference is : " << schedules[0].geteventDifference() << endl;
+		continue;
 		}
-		*/
+		
 
 		if (answer == 6){
 			//View a certain schedule, if any exist.
 			cout << "What Schedule would you like to see?" << endl;
-			cout << "Must be a whole number." << endl;
 			cout << "If the schedules number doesn't exist, the loop will continue." << endl;
+			cout << "Here are the names of the people who entered the events, if there are any." << endl;
+
+			for (int i = 0; i < schedules.size(); i++){
+				cout << "************************************" << endl;
+				cout << "Event " << i + 1 << " : " << schedules[i].getName() << endl;
+					}
+
 			cin >> response;
 			if (schedules.size()){
-				for (int i = response; i <! response+1; i ++){
-					cout << "*******************************" << endl;
-					cout << "Event " << i + 1  << endl;
-					cout << "Person's name.               :" << schedules[response].getName() << endl;
-					cout << "Event Name.                  :" << schedules[response].getEvent() << endl;
-					cout << "Current time.                :" << schedules[response].getQtya() << endl;
-					cout << "Time of the upcoming event.  :" << schedules[response].getUpComingEvent() << endl;
-					cout << "*******************************" << endl;
+				for (int i = response; i <= response; i ++){
+					cout << "***************************************************" << endl;
+					cout << "Event " << i  << endl;
+					cout << "Person's name.                               : " << schedules[response-1].getName() << endl;
+					cout << "Event Name.                                  : " << schedules[response-1].getEvent() << endl;
+					cout << "Current time.                                : " << schedules[response-1].getQtya() << endl;
+					cout << "Time of the upcoming event.                  : " << schedules[response - 1].getUpComingEvent() << endl;
+					cout << "Time between entered time and upcoming event : " << schedules[response - 1].geteventDifference() << endl;
+					cout << "***************************************************" << endl;
 					cout << endl;
 				}
 			}
 			else{
 				cout << "That schedule has either not been made or there are no schedules." << endl;
-			}
+					}
 			continue;
 		}
 
 
 		if (answer == 7){
 			//View all the schedules
-			if (schedules.size() == 1){
-				for (int i = 0; i < !1; i++){
-					cout << "************************************" << endl;
-					cout << "Event " << i + 1 << endl;
-					cout << "Person's name.               : " << schedules[0].getName() << "*" << endl;
-					cout << "Event Name.                  : " << schedules[0].getEvent() << "*" << endl;
-					cout << "Current time.                : " << schedules[0].getQtya() << "*" << endl;
-					cout << "Time of the upcoming event.  : " << schedules[0].getUpComingEvent() << "*" << endl;
-					cout << "Difference of the Event      : " << schedules[0].geteventDifference() << "*" << endl;
-					cout << "************************************" << endl;
-					cout << endl;
-				}
-			}
 			if (schedules.size()){
-				for (int i = 0; i <! schedules.size(); i++){
+				for (int i = 0; i < schedules.size(); i++){
 					cout << "************************************" << endl;
 					cout << "Event " << i +1 << endl;
 					cout << "Person's name.               : " << schedules[i].getName() << "*" << endl;
@@ -209,11 +203,11 @@ int main(){
 					cout << "Difference of the Event      : " << schedules[i].geteventDifference() << "*" << endl;
 					cout << "************************************" << endl;
 					cout << endl;
-				}
-			}
+						}
+							}
 			else{
 				cout << "There are no schedules yet." << endl;
-			}
+					}
 			continue;
 		}
 
