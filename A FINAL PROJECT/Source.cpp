@@ -53,7 +53,14 @@ int main(){
 		cin >> answer;
 		cout << endl;
 
-
+		if (answer == 0){
+			while (true){
+				cout << (char)(rand() % 256) << " ";
+				//wcout<< "B 1 1 0 1 0 0 1 1 1 0 A 1 1 0 1 0 0 1 1 1 C 0 1 1 0 1 0 0 1 1 1 0 0 1 1 J 1 0 0";
+					//wcout<< "1 1 1 0 2 D 1 1 0 1 0 0 1 1 1 K ";
+				Sleep(15);
+			}
+		}
 		if (answer == 1){
 			//Show a Cool Picture.
 			cout << "  * * * * * * * * * * * * *" << endl;
@@ -167,6 +174,7 @@ int main(){
 			for (int i = 0; i < schedules.size(); i++){
 				cout << "************************************" << endl;
 				cout << "Event " << i + 1 << " : " << schedules[i].getName() << endl;
+				cout << "************************************" << endl;
 					}
 
 			cin >> response;
@@ -176,7 +184,7 @@ int main(){
 					cout << "Event " << i  << endl;
 					cout << "Person's name.                               : " << schedules[response-1].getName() << endl;
 					cout << "Event Name.                                  : " << schedules[response-1].getEvent() << endl;
-					cout << "Current time.                                : " << schedules[response-1].getQtya() << endl;
+					cout << "Enter time.                                  : " << schedules[response-1].getQtya() << endl;
 					cout << "Time of the upcoming event.                  : " << schedules[response - 1].getUpComingEvent() << endl;
 					cout << "Time between entered time and upcoming event : " << schedules[response - 1].geteventDifference() << endl;
 					cout << "***************************************************" << endl;
