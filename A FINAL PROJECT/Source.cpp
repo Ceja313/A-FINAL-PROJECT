@@ -171,9 +171,9 @@ int main(){
 					}
 			if (schedules.size() == 1){
 				cout << "There is only one event difference." << endl;
-				cout << schedules[0].geteventDifference() << " is the time difference of the 1 Event." << endl;
-					high = schedules[0].geteventDifference();
-						}
+					cout << schedules[0].geteventDifference() << " is the time difference of the 1 Event." << endl;
+						high = schedules[0].geteventDifference();
+							}
 			if (schedules.size() >=2){
 				for (int i = 0; i <schedules.size(); i++){
 					if (schedules[i].geteventDifference() > high){
@@ -185,9 +185,9 @@ int main(){
 											cout << schedules[i].geteventDifference() << endl;
 												}
 													}
-		cout << "Highest Event Difference is : " << high << endl;
-		continue;
-		}
+														cout << "Highest Event Difference is : " << high << endl;
+															continue;
+																}
 
 
 		if (answer == 5){
@@ -198,10 +198,11 @@ int main(){
 					}
 			if (schedules.size() == 1){
 				cout << "There is only one event difference." << endl;
-				cout << schedules[0].geteventDifference() << " is the time difference of the 1 Event." << endl;
-				low = schedules[0].geteventDifference();
-					}
+					cout << schedules[0].geteventDifference() << " is the time difference of the 1 Event." << endl;
+						low = schedules[0].geteventDifference();
+							}
 			if (schedules.size() >= 2){
+				low = 100;
 				for (int i = 0; i < schedules.size(); i++){
 					if (schedules[i].geteventDifference() < low){
 						low = schedules[i].geteventDifference();
@@ -212,9 +213,9 @@ int main(){
 											cout << schedules[i].geteventDifference() << endl;
 												}
 													}
-		cout << "Lowest Event Difference is : " << low << endl;
-		continue;
-		}
+														cout << "Lowest Event Difference is : " << low << endl;
+															continue;
+																}
 		
 
 		if (answer == 6){
@@ -241,13 +242,13 @@ int main(){
 					cout << "Time between entered time and upcoming event : " << schedules[response - 1].geteventDifference() << endl;
 					cout << "***************************************************" << endl;
 					cout << endl;
-				}
-			}
-			else{
-				cout << "That schedule has either not been made or there are no schedules." << endl;
-					}
-			continue;
-		}
+						}
+							}
+								else{
+										cout << "That schedule has either not been made or there are no schedules." << endl;
+											}
+												continue;
+													}
 
 
 		if (answer == 7){
@@ -256,11 +257,11 @@ int main(){
 				for (int i = 0; i < schedules.size(); i++){
 					cout << "************************************" << endl;
 					cout << "Event " << i +1 << endl;
-					cout << "Person's name.               : " << schedules[i].getName() << "*" << endl;
-					cout << "Event Name.                  : " << schedules[i].getEvent() << "*" << endl;
-					cout << "Current time.                : " << schedules[i].getQtya() << "*" << endl;
-					cout << "Time of the upcoming event.  : " << schedules[i].getUpComingEvent() << "*" << endl;
-					cout << "Difference of the Event      : " << schedules[i].geteventDifference() << "*" << endl;
+					cout << "Person's name.               : " << schedules[i].getName() <<  endl;
+					cout << "Event Name.                  : " << schedules[i].getEvent() <<  endl;
+					cout << "Time Entered.                : " << schedules[i].getQtya() <<  endl;
+					cout << "Time of the upcoming event.  : " << schedules[i].getUpComingEvent() << endl;
+					cout << "Difference of the Event      : " << schedules[i].geteventDifference() << endl;
 					cout << "************************************" << endl;
 					cout << endl;
 						}
@@ -269,14 +270,14 @@ int main(){
 				cout << "There are no schedules yet." << endl;
 					}
 			continue;
-		}
+				}
 
 
 		if (answer == 8){
 			//Show the Time.
 			cout << __TIMESTAMP__ << endl;
-			continue;
-		}
+				continue;
+					}
 
 
 		if (answer == 9){
@@ -333,10 +334,10 @@ int main(){
 		if (answer == 10){
 			// Exit the Program.
 			cout << "Program has Exited." << endl;
-			cout << "I Hope you had fun!" << endl << endl;
-			system("pause");
-			return 0;
-		}
+				cout << "I Hope you had fun!" << endl << endl;
+					system("pause");
+						return 0;
+							}
 
 
 	} while (true);
