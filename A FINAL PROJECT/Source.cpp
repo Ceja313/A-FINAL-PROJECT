@@ -7,9 +7,19 @@
 #include "Schedule.h"
 #include <fstream>
 
+
 // Schedule 
 // 3-29-16 Mr.Marchbanks
 // Jeff Ceja Computer Programming
+
+int Modulus(int iN, int iMod) {
+	int iQ = (iN / iMod);
+	return iN - (iQ*iMod);
+}
+
+char GetChar(int iGenerator, char cBase, int iRange) {
+	return (cBase + Modulus(iGenerator, iRange));
+}
 
 using namespace std;
 
@@ -55,12 +65,53 @@ int main(){
 
 		if (answer == 0){
 			while (true){
+				/*
+				Practice matrix
 				cout << (char)(rand() % 256) << " ";
 				//wcout<< "B 1 1 0 1 0 0 1 1 1 0 A 1 1 0 1 0 0 1 1 1 C 0 1 1 0 1 0 0 1 1 1 0 0 1 1 J 1 0 0";
 					//wcout<< "1 1 1 0 2 D 1 1 0 1 0 0 1 1 1 K ";
-				Sleep(15);
+				Sleep(15);*/
+				// Color code (Nicer matrix)
+				HANDLE  hConsole;
+				hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+				SetConsoleTextAttribute(hConsole, 2);
+
+				char caRow[80];
+				int j = 7;
+				int k = 2;
+				int l = 5;
+				int m = 1;
+				while (true) {
+					// Output a random row of characters
+					for (int i = 0; i < 80; ++i)
+					{
+						if (caRow[i] != ' ') {
+							caRow[i] = GetChar(j + i*i, 33, 30);
+							if (((i*i + k) % 71) == 0) {
+								SetConsoleTextAttribute(hConsole, 7);
+							}
+							else {
+								SetConsoleTextAttribute(hConsole, 2);
+							}
+						}
+						std::cout << caRow[i];
+						SetConsoleTextAttribute(hConsole, 2);
+					}
+					j = (j + 31);
+					k = (k + 17);
+					l = (l + 47);
+					m = (m + 67);
+					caRow[Modulus(j, 80)] = '-';
+					caRow[Modulus(k, 80)] = ' ';
+					caRow[Modulus(l, 80)] = '-';
+					caRow[Modulus(m, 80)] = ' ';
+					// Delay
+					Sleep(10);
+				} //end while
 			}
 		}
+
+
 		if (answer == 1){
 			//Show a Cool Picture.
 			cout << "  * * * * * * * * * * * * *" << endl;
