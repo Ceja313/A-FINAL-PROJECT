@@ -199,19 +199,20 @@ int main(){
 			if (schedules.size() == 1){
 				cout << "There is only one event difference." << endl;
 				cout << schedules[0].geteventDifference() << " is the time difference of the 1 Event." << endl;
+				low = schedules[0].geteventDifference();
 					}
-			if (schedules.size() >=2){
-				for (int i = 0; i <schedules.size(); i++){
+			if (schedules.size() >= 2){
+				for (int i = 0; i < schedules.size(); i++){
 					if (schedules[i].geteventDifference() < low){
 						low = schedules[i].geteventDifference();
 							}
 								}
-				for (int i = 0; i <schedules.size(); i++){
-					cout << "These are the event differences." << endl;
-					cout << schedules[i].geteventDifference() << endl;
-						}
-							}
-		cout << "Lowest Event Difference is : " << schedules[0].geteventDifference() << endl;
+									cout << "These are the event differences." << endl;
+										for (int i = 0; i < schedules.size(); i++){
+											cout << schedules[i].geteventDifference() << endl;
+												}
+													}
+		cout << "Lowest Event Difference is : " << low << endl;
 		continue;
 		}
 		
