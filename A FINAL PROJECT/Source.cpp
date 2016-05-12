@@ -6,7 +6,7 @@
 #include <Windows.h>
 #include "Schedule.h"
 #include <fstream>
-
+#include "Game.h"
 
 // Schedule 
 // 3-29-16 Mr.Marchbanks
@@ -57,7 +57,8 @@ int main(){
 		cout << "* 7. View all the schedules.                 *" << endl;
 		cout << "* 8. Check the timestamp.                    *" << endl;
 		cout << "* 9. Show 2 Pictures.                        *" << endl;
-		cout << "* 10. Exit.                                  *" << endl;
+		cout << "* 10. Play Hangman (No return to Schedule)   *" << endl;
+		cout << "* 11. Exit.                                  *" << endl;
 		cout << "* Any other options will continue the loop.  *" << endl;
 		cout << "**********************************************" << endl;
 		cin >> answer;
@@ -71,6 +72,7 @@ int main(){
 				//wcout<< "B 1 1 0 1 0 0 1 1 1 0 A 1 1 0 1 0 0 1 1 1 C 0 1 1 0 1 0 0 1 1 1 0 0 1 1 J 1 0 0";
 					//wcout<< "1 1 1 0 2 D 1 1 0 1 0 0 1 1 1 K ";
 				Sleep(15);*/
+				//Real Matrix
 				// Color code (Nicer matrix)
 				HANDLE  hConsole;
 				hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -106,7 +108,7 @@ int main(){
 					caRow[Modulus(l, 80)] = '-';
 					caRow[Modulus(m, 80)] = ' ';
 					// Delay
-					Sleep(10);
+					Sleep(20);
 				} //end while
 			}
 		}
@@ -265,6 +267,7 @@ int main(){
 					cout << "************************************" << endl;
 					cout << endl;
 						}
+				cout << "If the difference of the time is greater than 60 after the period, it is in on hundredths of an hour." << endl;
 							}
 			else{
 				cout << "There are no schedules yet." << endl;
@@ -332,12 +335,22 @@ int main(){
 
 
 		if (answer == 10){
+			//play hangman
+			cout << "Hangman has started." << endl;
+			cout << "Only lower case letters are accepted." << endl;
+			cout << "Individual letters or guesses at the whole word will be accepted." << endl;
+			Game game;
+			game.run();
+			return 0;
+		}
+
+		if (answer == 11){
 			// Exit the Program.
 			cout << "Program has Exited." << endl;
-				cout << "I Hope you had fun!" << endl << endl;
-					system("pause");
-						return 0;
-							}
+			cout << "I Hope you had fun!" << endl << endl;
+			system("pause");
+			return 0;
+		}
 
 
 	} while (true);
