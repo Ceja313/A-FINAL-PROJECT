@@ -7,6 +7,7 @@
 #include "Schedule.h"
 #include <fstream>
 #include "Game.h"
+#include "Tic.h"
 
 // Schedule 
 // 3-29-16 Mr.Marchbanks
@@ -58,7 +59,8 @@ int main(){
 		cout << "* 8. Check the timestamp.                    *" << endl;
 		cout << "* 9. Show 2 Pictures.                        *" << endl;
 		cout << "* 10. Play Hangman (No return to Schedule)   *" << endl;
-		cout << "* 11. Exit.                                  *" << endl;
+		cout << "* 11. Play TicTacToe (No return to Schedules)*" << endl;
+		cout << "* 12. Exit.                                  *" << endl;
 		cout << "* Any other options will continue the loop.  *" << endl;
 		cout << "**********************************************" << endl;
 		cin >> answer;
@@ -344,7 +346,16 @@ int main(){
 			return 0;
 		}
 
+
 		if (answer == 11){
+			//play TicTacToe
+			cout << "TicTacToe has started." << endl;
+			Tic tic;
+			tic.run();
+			return 0;
+		}
+
+		if (answer == 12){
 			// Exit the Program.
 			cout << "Program has Exited." << endl;
 			cout << "I Hope you had fun!" << endl << endl;
